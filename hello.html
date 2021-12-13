@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic JavaScript</title>
+</head>
+<body>
+    <h1>Basic Form</h1>
+
+    <label>Name:-</label>
+    <input id="name" type="text">
+    <br><br>
+    <label>Gender:-</label>
+    <input id='gender1' type="radio" name='gender' value="Male">Male
+    <input id='gender2' type="radio" name='gender' value="Female">Female
+    <br><br>
+    <label>College:-</label>
+    <select id="college">
+        <option></option>
+        <option>SAGE</option>
+        <option>DAVV</option>
+        <option>RGPV</option>
+        <option>IPS</option>
+    </select>
+    <br><br>
+    <label>Language Knowledge:-</label>
+    <input id="leg1" name="lg" value="HTML" type='checkbox'>HTML
+    <input id="leg2" name="lg" value="CSS" type='checkbox'>CSS
+    <input id="leg3" name="lg" value="JavaScript" type='checkbox'>Javascript
+    <input id="leg4" name="lg" value="PHP" type='checkbox'>PHP
+    <input id="leg5" name="lg" value="Python" type='checkbox'>Python
+    <br><br>
+    <label>Description:-</label>
+    <textarea id="descri" placeholder="Write Some Text..."></textarea>
+    <br><br>
+    <button onclick=getdata()> Show Data</button>
+    <br>
+    <div>
+        <p>Name:- <span id="setname"></span></p>
+        <p>Gender:- <span id="setgender"></span></p>
+        <p>College:- <span id="setcollege"></span></p>
+        <p>Language Knowledge:- <span id="setlagknow"></span></p>
+        <p>Description:- <span id="setdescri"></span></p>
+    </div>
+
+    <script>
+        function getdata()
+        {
+            var name = document.getElementById('name').value
+            document.getElementById('setname').innerText=name
+
+            if(document.getElementById('gender1').checked) {   
+                document.getElementById("setgender").innerHTML   
+                    = document.getElementById("gender1").value;
+            }
+            else if(document.getElementById('gender2').checked) {   
+                document.getElementById("setgender").innerHTML   
+                    = document.getElementById("gender2").value;
+            }
+
+            var cname = document.getElementById('college').value
+            document.getElementById('setcollege').innerText=cname
+
+            var dname = document.getElementById('descri').value
+            document.getElementById('setdescri').innerHTML=dname
+
+            var csv = document.querySelectorAll("input[name='lg']:checked")
+            document.getElementById('setlagknow').innerHTML=csv[0]
+        }
+        
+    </script>
+</body>
+</html>

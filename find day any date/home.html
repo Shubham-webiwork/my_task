@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Day And Date</title>
+</head>
+<body>
+    <label>Entar any date :- </label>
+    <input id="fulldate" type='date'><br/>
+    <br/>
+    <button onclick="acessdate()"> Submit </button>
+    <br/>
+    <br/>
+    <h3>Given date day is :- <span id='show'> </span></h3>
+    <script>
+        const acessdate=()=>
+        {
+            var fulldate = document.getElementById('fulldate').value
+            var d = new Date(fulldate)
+            let da = d.getDay();
+            switch (da) {
+                case 0:
+                document.getElementById('show').innerHTML ='Sunday';
+                    break;
+                case 1:
+                document.getElementById('show').innerHTML ='Monday';
+                    break;
+                case 2:
+                document.getElementById('show').innerHTML ='Tuesday';
+                    break;
+                case 3:
+                document.getElementById('show').innerHTML ='Wednesday';
+                    break;
+                case 4:
+                document.getElementById('show').innerHTML ='Thursday';
+                    break;
+                case 5:
+                document.getElementById('show').innerHTML ='Friday';
+                    break;
+                case 6:
+                document.getElementById('show').innerHTML ='Friday';
+                    break;
+                default:
+                document.getElementById('show').innerHTML ='entar write value';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
